@@ -1,0 +1,97 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fdeee2;
+  font-family: 'Montserrat', sans-serif; /* It's good to define the font-family globally if you use it throughout */
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Use 100% height to fill the remaining space */
+  width: 100%; /* Use 100% width to fill the remaining space */
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+  max-width: 200px; /* Removed the quotes to apply the value correctly */
+  margin-bottom: 20px; /* Adjust as needed */
+  margin-top: -20px; /* Adjust this value to move the logo higher */
+}
+
+
+
+/* Styles for the main container of the form and list pages */
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto; /* Center horizontally */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+h1 {
+  color: #333;
+}
+
+input[type="text"], button {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  background: #ffffff;
+  color: #333;
+}
+
+button {
+  background-color: #ff686b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e05d60;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Unified button styles for links that look like buttons */
+.action-button {
+  padding: 10px 20px;
+  margin: 10px auto; /* Center the button horizontally */
+  background-color: #ff686b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  display: block; /* Occupies the full width */
+  width: 80%; /* Makes sure both buttons have the same width */
+  max-width: 300px; /* You can adjust this value to your preference */
+  text-align: center;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #e05d60;
+}
