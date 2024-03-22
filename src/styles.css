@@ -1,98 +1,248 @@
+/* Use a root color scheme for consistency and easy changes */
+:root {
+  --primary-color: #ff686b;
+  --hover-color: #e05d60;
+  --background-color: #fdeee2;
+  --text-color: #333;
+  --container-bg: #fff;
+  --container-border: #ddd;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fdeee2;
-  font-family: 'Montserrat', sans-serif; /* It's good to define the font-family globally if you use it throughout */
+  font-family: 'Montserrat', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
 }
-
 
 .main-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100%; /* Use 100% height to fill the remaining space */
-  width: 100%; /* Use 100% width to fill the remaining space */
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center; /* Center children horizontally */
+  padding: 20px;
 }
 
+.content {
+  text-align: center;
+  max-width: 600px;
+}
 
 .logo {
-  max-width: 200px; /* Removed the quotes to apply the value correctly */
-  margin-bottom: 20px; /* Adjust as needed */
-  margin-top: -20px; /* Adjust this value to move the logo higher */
-}
-
-
-
-/* Styles for the main container of the form and list pages */
-.container {
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  margin: 0 auto; /* Center horizontally */
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+  max-width: 150px;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  color: #333;
+  margin-bottom: 2rem;
 }
 
-input[type="text"], input[type="password"], button {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-input[type="text"], input[type="password"] {
-  background: #ffffff;
-  color: #333;
-}
-
-
-button {
-  background-color: #ff686b;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e05d60;
-}
-
-form {
+.button-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
 }
 
-/* Unified button styles for links that look like buttons */
 .action-button {
-  padding: 10px 20px;
-  margin: 10px auto; /* Center the button horizontally */
-  background-color: #ff686b;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--container-bg);
+  padding: 15px 30px;
+  margin-bottom: 10px;
   border: none;
-  display: block; /* Occupies the full width */
-  width: 80%; /* Makes sure both buttons have the same width */
-  max-width: 300px; /* You can adjust this value to your preference */
-  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
   cursor: pointer;
 }
 
 .action-button:hover {
+  background-color: var(--hover-color);
+}
+
+.user-count {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: auto; /* Centers the container vertically and horizontally */
+}
+
+/* Styling for the login form inputs and button */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: calc(100% - 22px); /* Accounts for padding and border */
+}
+
+.login-container button {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #ff686b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
   background-color: #e05d60;
+}
+
+
+/* Styles for the form container */
+.container {
+  max-width: 450px; /* More reasonable width for forms */
+  margin: 40px auto; /* Center the form with more space around */
+  padding: 10px; /* More padding for better spacing */
+  background: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow-y: auto;
+}
+
+/* Styles for the form elements */
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+button {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px; /* Larger padding for better touch */
+  margin-bottom: 16px; /* Consistent margin */
+  border: 1px solid var(--input-border);
+  border-radius: 4px; /* Slightly rounded corners */
+  background: #fff;
+  color: var(--text-color);
+  font-size: 1rem; /* Standard font size */
+  transition: border-color 0.2s; /* Smooth transition for hover effects */
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="url"]:hover,
+input[type="number"]:hover {
+  border-color: var(--input-hover-border); /* Darker border on hover */
+}
+
+/* Button specific styles */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px; /* Slight letter spacing */
+  border: none;
+  cursor: pointer;
+  display: block; /* if not already block-level */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Adding a title to the form for a better UX */
+.container > h1 {
+  color: var(--text-color);
+  margin-bottom: 24px; /* More space below the title */
+  font-size: 1.75rem; /* Larger font size for the title */
+  font-weight: 800; /* Lighter font weight for a modern feel */
+  text-align: center; /* Center align the title */
+}
+
+/* If you want the placeholders to be styled as well */
+::placeholder {
+  color: var(--input-border); /* Placeholder text color */
+  opacity: 1; /* Fix for inconsistent placeholder opacity in different browsers */
+}
+
+
+
+.restaurantcard-container {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width calculations */
+  text-align: center; /* Center children horizontally */
+
+}
+
+.restaurantcard > h1 {
+  color: var(--text-color);
+  margin-bottom: 24px; /* More space below the title */
+  font-size: 1.75rem; /* Larger font size for the title */
+  font-weight: 800; /* Lighter font weight for a modern feel */
+  text-align: center; /* Center align the title */
+}
+
+
+
+/* Search input styles */
+.search-input {
+  padding: 10px;
+  margin: 20px 0; /* Adjust spacing around search bar as needed */
+  width: 100%; /* Full width */
+  max-width: 400px; /* Maximum width of the search bar */
+  border: 2px solid #000; /* Make the border black and thicker for visibility */
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding and border in the element's width */
+}
+
+
+
+/* Grid layout for restaurants */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid layout */
+  gap: 20px; /* Space between grid items */
+  padding: 0;
+  margin-top: 20px; /* Spacing from the search bar */
+}
+
+/* Individual restaurant card styles */
+.restaurant-card {
+  background: var(--container-bg);
+  padding: 20px;
+  border: 1px solid var(--container-border);
+  border-radius: 5px;
+  text-align: center; /* Center text in card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card a {
+  color: var(--text-color);
+  text-decoration: none; /* Remove link underlining */
+  display: block; /* Block level for full width clickable area */
+}
+
+.restaurant-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
