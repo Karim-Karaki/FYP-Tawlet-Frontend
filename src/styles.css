@@ -22,9 +22,9 @@ html, body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  text-align: center; /* Center children horizontally */
-  padding: 20px;
+  flex-direction: column; /* Stack children vertically */
 }
+
 
 .content {
   text-align: center;
@@ -245,4 +245,24 @@ button:hover {
 
 .restaurant-card:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+.action-button.small {
+  padding: 8px 16px; /* Smaller padding */
+  font-size: 0.8rem; /* Smaller font-size if necessary */
+}
+
+
+.restaurant-info-container {
+  background: var(--container-bg);
+  border: 1px solid var(--container-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: auto;
+  width: 90%; /* or your desired width */
+  max-width: 600px; /* or your desired max width */
+  box-sizing: border-box; /* Include padding in width */
 }

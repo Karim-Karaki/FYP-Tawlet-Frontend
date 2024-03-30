@@ -1,3 +1,5 @@
+//MainPage.js 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +13,6 @@ const MainPage = () => {
         <div className="button-container">
           <Link to="/add" className="action-button">Add a New Restaurant</Link>
           <Link to="/list" className="action-button">See All Restaurants</Link>
-          <Link to="/offers" className="action-button">Offers</Link>
         </div>
       </div>
     </div>
